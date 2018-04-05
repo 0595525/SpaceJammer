@@ -1,0 +1,71 @@
+
+
+import java.awt.geom.Point2D;
+import java.awt.geom.Point2D.Double;
+import java.util.*;
+
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
+
+	public class Bullet {
+	private Rectangle bullet;
+	private double size;
+	private String direction;
+	
+	public Bullet(double size, Color color, String direction, Rectangle shoot) {
+		this.size = size;
+		this.direction = direction;
+		//Point2D.Double position = initPositiion(shoot.getCenterX(), shoot.getCenterY(), shoot.getRadius(), size);
+		Point2D.Double position = initPositiion(shoot.getX(), shoot.getY(), shoot.getWidth(), shoot.getHeight());
+		this.bullet = Object.createR(color, position.getX(), position.getY(), size, size);
+	}
+
+
+
+	private Double initPositiion(double shootX, double shootY, double shootWidth, double shootHeight) {
+		// TODO Auto-generated method stub
+		Double position = new Point2D.Double();
+		switch (direction) {
+		case "UP":
+			position.setLocation(shootX + shootWidth / 2 - size / 2,  shootY - size);
+			break;
+		case "DOWN":
+			position.setLocation(shootX + shootWidth / 2 - size /2,  shootY + shootHeight);
+			break;
+		case "LEFT":
+			position.setLocation(shootX - size,  shootY + shootHeight /2 -size /2);
+			break;
+		case "RIGHT":
+			position.setLocation(shootX + shootWidth,  shootY + shootHeight / 2 - size /2);
+			break;
+		}
+		return position;
+	}
+
+
+
+	public Rectangle getBullet() {
+		return bullet;
+	}
+	
+	public void move() {
+		
+		switch (direction) {
+			case "UP":
+				bullet.setY(bullet.getY() - 5);
+				break;
+			case "DOWN":
+				bullet.setY(bullet.getY() + 5);
+				break;
+			case "LEFT":
+				bullet.setX(bullet.getX() - 5);
+				break;
+			case "RIGHT":
+				bullet.setX(bullet.getX() + 5);
+			
+		}
+	}
+
+
+}
