@@ -1,8 +1,9 @@
 import java.util.HashSet;
 import java.util.Set;
+
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 public abstract class FightObject {
@@ -11,14 +12,10 @@ public abstract class FightObject {
 	protected Hero heroObject;
 	protected Rectangle hero;
 	protected Set<Bullet> BulletObjects;
-	protected long counter = 0L;
+	protected long counter = 2L;
 	protected Group heroBullet;
 	protected Group root;
-	private int Score;
-	
-	protected void Restart() {
-		scene.MenuScene(scene);
-	}
+	public int count = 0;
 	
 	//game over
 	protected void lost() {
@@ -27,7 +24,7 @@ public abstract class FightObject {
 	
 	protected void addhero() {
 		heroObject = new Hero();
-		hero = heroObject.GetHero();
+		hero = heroObject.getHero();
 		root.getChildren().add(hero);
 	}
 	
@@ -52,7 +49,7 @@ public abstract class FightObject {
 		root.getChildren().add(bullet);
 	}
 
-	protected void MoveBullet() {
+	protected void moveBullet() {
 		for (Bullet BulletObject : BulletObjects) {
 			BulletObject.move();
 		}
@@ -66,8 +63,7 @@ public abstract class FightObject {
 			if (bullet.getBoundsInLocal().intersects(r.getBoundsInLocal())) {
 				bulletSet.remove(BulletObject);
 				bullets.getChildren().remove(bullet);
-				
-				setScore(getScore() + 1);
+				count++;
 				return true;
 			}
 		}
@@ -76,24 +72,11 @@ public abstract class FightObject {
 		
 	}
 	
-	//to 
-	protected void HitEnemyInGroup (Group group, boolean remove) {
-		for(Node node : group.getChildren()) {
-			Rectangle r = (Rectangle) node;
-			if (HitEnemy(BulletObjects,heroBullet,r)) {
-				if (remove) {
-					group.getChildren().remove(r);
-				}
-				return;
-			}
-		}	
-		
-	}
-	
 	//protected void check
 	protected void EnemyHitHero(Rectangle enemy) {
 		if (hero.getBoundsInLocal().intersects(enemy.getBoundsInLocal())) {
 			lost();
+			count--;
 		}
 	}
 	protected void shoot(String direction) {
@@ -101,13 +84,5 @@ public abstract class FightObject {
 		BulletObjects.add(BulletObject);
 		updateBullet();
 		
-	}
-
-	public int getScore() {
-		return Score;
-	}
-
-	public void setScore(int score) {
-		Score = score;
 	}
 }
