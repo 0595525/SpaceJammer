@@ -32,7 +32,11 @@ public class Start extends FightObject implements SceneInterface {
 		if (counter % EnemyshowRate() == 0) {
 			createEnemy();
 		}
-		
+		//moveEnemies();
+		//movePlayerLasers();
+		//checkPlayerLaserHitEnemy();
+		//checkPlayerEnemyIntersect();
+		//checkEnemyReachBottom();	
 		
 		counter++;
 	}
