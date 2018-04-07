@@ -1,11 +1,11 @@
 								
-			  	  	  	                  __________________________________
-					    	  	                |	     SPACE JAMMER README       |
-					  	  	                  |________________________________|
+						         ________________________________
+							|	SPACE JAMMER README      |
+							|________________________________|
 
-	This is a gaming application. Launching the gaming software is initialised by a start button. The game starts at scene with an object 
-controlled by user using keyboard keys, possessing capabilities to move left, right, up, down on screne(respective to keyboard keys). In addition, 
-user controlled object has ability to shoot bullets to kill the enemies which are randomly generated and posses an uncontrolled motion towards 
+	This is a gaming application. Launching the gaming software is initialised by a start button, by clicking button or pressing space bar. The game starts at scene with an object 
+controlled by user using keyboard keys, possessing capabilities to move left, right, up, down on screne(respective to those keys on keyboard). In addition, 
+user controlled object has ability to shoot bullets [(A- left)(D- right)(press W or space key- up)] to kill the enemies which are randomly generated and posses an uncontrolled motion towards 
 bottom of screne and destroying every enemy gives user a score. The user controlled object has only one lifeline(chance of play the game). If the 
 user misses an enemy and enemy touches the bottom of screen or the user controlled object touches the enemy, the game over screne comes up and the
 objecs do not move. Software stores data on scores and keeps track of high scores. 
