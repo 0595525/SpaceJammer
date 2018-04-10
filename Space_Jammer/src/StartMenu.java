@@ -1,3 +1,6 @@
+//Reference:
+//https://github.com/daniel-chai/javafx-game/tree/master/src
+//https://github.com/AlmasB/FXTutorials/tree/master/src/com/almasb
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -19,7 +22,7 @@ public class StartMenu implements IScene{
 	public Scene init(int width, int height) {
 		// TODO Auto-generated method stub
 		root = new Group();
-		menu = new Scene(root, width, height, Color.BLACK);
+		menu = new Scene(root, width, height, Color.GOLD);
 		addStartBT();
 		
 		return menu;
@@ -27,7 +30,7 @@ public class StartMenu implements IScene{
 
 	private void addStartBT() {
 		// TODO Auto-generated method stub
-		Button startBT = Object.createB("START", 50, 50);
+		Button startBT = Object.CreateB("START", 300, 300);
 		startBT.setOnAction(new EventHandler<ActionEvent>() {
 			
 			@Override
