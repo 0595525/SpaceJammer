@@ -1,28 +1,24 @@
+//Reference:
+//https://github.com/daniel-chai/javafx-game/tree/master/src
+//https://github.com/AlmasB/FXTutorials/tree/master/src/com/almasb
 import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
-
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+
 
 public class Object {
 	public static double buttonW = 200;
 	public static double buttonH = 50;		
 	public static int textSize= 25;
-	/*
-	public static Circle circleC ( Color color, double x, double y, double radius) {
-		Circle circle = new Circle();
-		circle.setFill(color);
-		circle.setCenterX(x);
-		circle.setCenterY(y);
-		circle.setRadius(radius);
-		return circle;
-	}
-	*/
-	public static Button createB(String text, double x, double y) {
+
+
+	//creat the botton
+	public static Button CreateB(String text, double x, double y) {
 		return createB(text, x, y, buttonW, buttonH, textSize);
 	}
-	
+	//
 	public static Button createB(String text, double x, double y, double width, double height, int fontSize) {
 		Button BT = new Button();
 		BT.setText(text);
@@ -36,7 +32,7 @@ public class Object {
 	}
 	
 	
-	
+	//create the text
 	public static Text createT(String text, double x, double y) {
 		return createT(text, x, y, textSize);
 	}
@@ -53,7 +49,7 @@ public class Object {
 		return T;
 		
 	}
-	
+	// create  the rectangle
 	public static Rectangle createR (Color color, double x, double y, double width, double height) {
 		Rectangle rectangle = new Rectangle();
 		rectangle.setFill(color);
